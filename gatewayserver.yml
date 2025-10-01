@@ -16,3 +16,9 @@ spring:
             - Path=/api/albums/**
           filters:
             - StripPrefix=1
+        - id: albums
+          uri: lb://albumsserver
+          predicates:
+            - Path=/api/albums/**
+          filters:
+            - StripPrefix=1      
